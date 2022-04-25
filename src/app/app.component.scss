@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
+* {
+  font-family: 'Raleway', sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.weatherApp {
+  &__container {
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    margin: 2rem auto;
+    box-shadow: 10px 10px 10px 10px #1b1a1a;
+    border-radius: 20px;
+  }
+
+  &__box {
+    &--upper {
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+      padding-bottom: 100px;
+      padding-top: 100px;
+
+      img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: -1;
+      }
+    }
+
+    &--lower {
+      h3{
+        margin-top: 8px;
+        text-align: center;
+      }
+    }
+  }
+
+  &__data {
+    &--upper {
+      max-height: 331px;
+      position: relative;
+      width: fit-content;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: rgba(27, 26, 26, 0.55);
+      color: goldenrod;
+      font-weight: bolder;
+      padding: 8px 16px;
+      border-radius: 8px;
+
+      .location {
+        font-size: 2rem;
+      }
+
+      .temperature {
+        font-size: 3.5rem;
+      }
+    }
+
+    &--lower {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      padding: 8%;
+
+      .data__box {
+        width: 50%;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+        margin-bottom: 2rem;
+
+
+        .box {
+          &__img {
+            display: flex;
+            flex-direction: column;
+            width: 25%;
+            font-size: 0.8rem;
+          }
+
+          &__value {
+            width: 75%;
+            font-size: 2.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .speed{
+              display: flex;
+              flex-direction: column;
+              font-size: 1.5rem;
+              margin-left: 5px;
+
+              span:first-child{
+                border-bottom: 3px solid black;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+}

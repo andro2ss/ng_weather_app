@@ -1,4 +1,8 @@
-
+<div class="weatherApp__searchBox">
+  <form #form="ngForm" (submit)="onSubmit()">
+    <input type="text" placeholder="Search city" name="city" [(ngModel)]="cityName">
+  </form>
+</div>
 
 <div class="weatherApp__container" *ngIf="weatherData">
   <div class="weatherApp__box--upper">

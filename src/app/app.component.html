@@ -1,11 +1,14 @@
-<div class="weatherApp__container">
+
+
+<div class="weatherApp__container" *ngIf="weatherData">
   <div class="weatherApp__box--upper">
-    <img src="../assets/cold-temp.jpg" alt="Cold temperature image" *ngIf="false">
-    <img src="../assets/neutral-temp.jpg" alt="Optimal temperature image" *ngIf="false">
-    <img src="../assets/hot-temp.jpg" alt="Hot temperature image" *ngIf="true">
+    <img src="../assets/cold-temp.jpg" alt="Cold temperature image" *ngIf="weatherData.main.temp < 5">
+    <img src="../assets/neutral-temp.jpg" alt="Optimal temperature image"
+         *ngIf="weatherData.main.temp >= 5 && weatherData.main.temp < 24">
+    <img src="../assets/hot-temp.jpg" alt="Hot temperature image" *ngIf="weatherData.main.temp >= 24">
     <div class="weatherApp__data--upper">
-      <div class="location">Warszawa</div>
-      <div class="temperature">{{15.5 | number: '1.0-0'}}°C</div>
+      <div class="location">{{weatherData.name}}</div>
+      <div class="temperature">{{weatherData.main.temp | number: '1.0-0'}}°C</div>
     </div>
   </div>
   <div class="weatherApp__box--lower">
@@ -17,7 +20,7 @@
           <span>min</span>
         </div>
         <div class="box__value">
-          {{10}}°C
+          {{weatherData.main.temp_min | number: '1.0-0'}}°C
         </div>
       </div>
       <div class="data__box">
@@ -26,7 +29,7 @@
           <span>max</span>
         </div>
         <div class="box__value">
-          {{20}}°C
+          {{weatherData.main.temp_max | number: '1.0-0'}}°C
         </div>
       </div>
       <div class="data__box">
@@ -35,7 +38,7 @@
           <span>humidity</span>
         </div>
         <div class="box__value">
-          {{10}}%
+          {{weatherData.main.humidity}}%
         </div>
       </div>
       <div class="data__box">
@@ -44,9 +47,10 @@
           <span>wind</span>
         </div>
         <div class="box__value">
-          {{10}} <div class="speed">
-          <span>km</span><span>h</span>
-        </div>
+          {{weatherData.wind.speed}}
+          <div class="speed">
+            <span>km</span><span>h</span>
+          </div>
         </div>
       </div>
     </div>

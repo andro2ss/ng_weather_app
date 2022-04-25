@@ -1,0 +1,10 @@
+<div class="weatherApp__box--upper" *ngIf="weatherData">
+  <img src="../../../assets/cold-temp.jpg" alt="Cold temperature image" *ngIf="weatherData.main.temp < 5">
+  <img src="../../../assets/neutral-temp.jpg" alt="Optimal temperature image"
+       *ngIf="weatherData.main.temp >= 5 && weatherData.main.temp < 24">
+  <img src="../../../assets/hot-temp.jpg" alt="Hot temperature image" *ngIf="weatherData.main.temp >= 24">
+  <div class="weatherApp__data--upper">
+    <div class="location">{{weatherData.name}}</div>
+    <div class="temperature">{{weatherData.main.temp | number: '1.0-0'}}°C</div>
+  </div>
+</div>

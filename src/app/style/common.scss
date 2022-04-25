@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
+$color-text1: goldenrod;
+$color-text2: black;
+$color-background1: rgba(38, 153, 195, 0.55);
+$color-background2: rgba(186, 221, 237, 0.75);
+$color-background3: rgba(27, 26, 26, 0.55);
+
+
+* {
+  font-family: 'Raleway', sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}

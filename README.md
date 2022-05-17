@@ -18,7 +18,7 @@ A simple app to check Weather
 * TypeScript
 * Angular
 * SCSS
-* Rest Api
+* REST
 * Firebase
 
 ## Setup
